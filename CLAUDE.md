@@ -10,27 +10,26 @@ Goal of this file: any AI (or human) reading it should be able to **add a new le
 ## 2. Tech rules
 - Pure **HTML + CSS + vanilla JS**. No frameworks, no build step, no CDN libraries.
 - Hosted on **GitHub Pages** from the repository root (`main` branch, `/ (root)`).
-- All paths are **relative** (`../assets/style.css`), never absolute (`/assets/...`), so Pages works in a sub-path.
-- Shared styles live only in `assets/style.css`. Shared behaviour lives only in `assets/script.js`.
+- All paths are **relative** (`style.css`), never absolute (`/assets/...`), so Pages works in a sub-path.
+- Shared styles live only in `style.css`. Shared behaviour lives only in `script.js`.
   Do **not** put `<style>` or `<script>` blocks inside lesson files.
 
 ## 3. Folder structure
+All files sit in the repository root (flat structure, no sub-folders — easy to upload via GitHub web).
 ```
 /
 ├── index.html              ← home page: lesson card grid
 ├── CLAUDE.md               ← this file (project rules)
 ├── README.md               ← human-facing intro
-├── assets/
-│   ├── style.css           ← the ONLY stylesheet
-│   └── script.js           ← flip cards, answer reveal
-└── lessons/
-    ├── _template.html      ← copy this to start every new lesson
-    ├── 01-greetings-around-the-world.html
-    └── 02-festivals-in-taiwan.html
+├── style.css               ← the ONLY stylesheet
+├── script.js               ← flip cards
+├── _template.html          ← copy this to start every new lesson
+├── 01-greetings-around-the-world.html
+└── 02-festivals-in-taiwan.html
 ```
 
 ## 4. File naming
-- Lessons: `lessons/NN-kebab-case-title.html`
+- Lessons: `NN-kebab-case-title.html` (in the root)
   - `NN` = two-digit number, next unused (01, 02, 03 …).
   - lowercase, hyphens only, English words, no spaces or Chinese characters.
 - Never rename an existing lesson file (links from students would break).
@@ -58,8 +57,8 @@ Every lesson uses these sections with these exact `class`/`id` names (copy from 
 | 7 | Footer nav | `<nav class="lesson-nav">` | links: ← Home, and ← Previous / Next → lesson if they exist |
 
 ## 7. How to add a new lesson (step-by-step for AI)
-1. Find the highest `NN` in `lessons/`; the new number is `NN+1`.
-2. Copy `lessons/_template.html` → `lessons/NN-new-topic.html`.
+1. Find the highest `NN` among the lesson files; the new number is `NN+1`.
+2. Copy `_template.html` → `NN-new-topic.html`.
 3. Fill in every section from §6. Keep all class names. Delete the `TODO` comments.
 4. Update the `<title>` tag: `NN · Title | Culture English Lab`.
 5. In `index.html`, add one `<a class="lesson-card">` inside `<div class="lesson-grid">`,

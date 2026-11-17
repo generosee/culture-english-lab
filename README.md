@@ -13,4 +13,4 @@ An interactive handout website that teaches English to intermediate (B1) learner
 
 ## Add a new lesson
 Ask an AI: *"Read CLAUDE.md and add lesson 03 about [topic]."*
-It will copy `lessons/_template.html`, fill in the 6 sections, and add a card to `index.html`.
+It will copy `_template.html`, fill in the 6 sections, and add a card to `index.html`.
